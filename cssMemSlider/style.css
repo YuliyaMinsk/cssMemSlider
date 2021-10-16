@@ -23,7 +23,7 @@ h1 {
   font-size: 2.92rem;
   font-weight: 200;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 ul[class],
@@ -63,7 +63,7 @@ input {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 }
 
 .main {
@@ -79,6 +79,7 @@ input {
 }
 
 .slider-box {
+  overflow: hidden;
   display: -ms-grid;
   display: grid;
       grid-template-areas: "slider" "control" "title";
@@ -86,7 +87,7 @@ input {
   align-self: flex-start;
   width: 420px;
   min-height: 200px;
-  padding: 30px;
+  padding: 30px 30px 0 30px;
   background-color: #242b31;
 }
 
@@ -99,13 +100,18 @@ input {
   grid-area: slider;
   position: relative;
   margin: 0 auto;
+  background-color: #FFFFFF;
 }
 
 .slider__image {
-  margin-left: -50px;
+  margin-left: -20px;
   opacity: 0;
   width: 100%;
   height: 100%;
+}
+
+.slider__image img {
+  margin: 0 auto;
 }
 
 .title {
@@ -115,12 +121,15 @@ input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   min-height: 25px;
   padding-bottom: 60px;
 }
 
 .title p {
-  margin-left: -20px;
   opacity: 0;
 }
 
@@ -183,6 +192,9 @@ input {
 #dot-2:checked ~ .slider #slide-2,
 #dot-3:checked ~ .slider #slide-3,
 #dot-4:checked ~ .slider #slide-4 {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-transition: margin-left 1s, opacity 0.5s ease-in;
   transition: margin-left 1s, opacity 0.5s ease-in;
   margin-left: 0;
@@ -258,8 +270,15 @@ input {
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
     grid-area: slider;
-    width: 750px;
-    height: 500px;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    width: 800px;
+    height: 600px;
+  }
+  .slider__image {
+    -ms-flex-negative: 1;
+        flex-shrink: 1;
+    width: 800px;
   }
   .title {
     -ms-grid-row: 2;
