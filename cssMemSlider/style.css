@@ -1,0 +1,293 @@
+@font-face {
+  font-family: Raleway;
+  src: url("../assets/fonts/Raleway-ExtraLight.ttf");
+  font-weight: 200;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: "Raleway", "Verdana", sans-serif;
+  background-color: #343d46;
+  color: #FFFFFF;
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 2.92rem;
+  font-weight: 200;
+  text-align: center;
+  margin-top: 0.6rem;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input {
+  display: none;
+}
+
+.label {
+  display: none;
+}
+
+._wrapper {
+  min-height: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.header__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 2vh;
+}
+
+.main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.slider-box {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "slider slider" "title control";
+  gap: 1rem;
+  max-width: 58vw;
+  background-color: #242b31;
+  padding: 2vw 2vw 0 2vw;
+  margin-bottom: 5vh;
+}
+
+.slider {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: slider;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.slide-wrap {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (54vw)[4];
+      grid-template-columns: repeat(4, 54vw);
+}
+
+.slider__image {
+  height: 66vh;
+  opacity: 0;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.slider__image img {
+  background-color: #FFFFFF;
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 100%;
+  width: 100%;
+}
+
+.title {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: title;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  min-height: 5vh;
+}
+
+.title p {
+  opacity: 0;
+  -webkit-transform: translateX(2vw);
+          transform: translateX(2vw);
+}
+
+.control {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: control;
+  width: 100%;
+  min-height: 5vh;
+  text-align: right;
+  cursor: default;
+}
+
+.dots {
+  display: inline-block;
+  margin: 0.6rem 0.3rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  background-color: #1948ad;
+  cursor: pointer;
+}
+
+#label1:hover .dots,
+#label2:hover .dots,
+#label3:hover .dots,
+#label4:hover .dots {
+  background-color: #ffffff;
+}
+
+#dot-1:checked ~ .control #label1:hover #label1__area,
+#dot-2:checked ~ .control #label2:hover #label2__area,
+#dot-3:checked ~ .control #label3:hover #label3__area,
+#dot-4:checked ~ .control #label4:hover #label4__area {
+  border: 0.2rem solid #ffffff;
+}
+
+#dot-1:checked ~ .control #label1 #label1__area,
+#dot-2:checked ~ .control #label2 #label2__area,
+#dot-3:checked ~ .control #label3 #label3__area,
+#dot-4:checked ~ .control #label4 #label4__area {
+  border: 0.2rem solid #1948ad;
+  background-color: transparent;
+}
+
+#dot-1:checked ~ .title #title-1,
+#dot-2:checked ~ .title #title-2,
+#dot-3:checked ~ .title #title-3,
+#dot-4:checked ~ .title #title-4 {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 0.5s ease-in;
+  transition: -webkit-transform 0.5s ease-in;
+  transition: transform 0.5s ease-in;
+  transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
+  opacity: 1;
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+}
+
+#dot-1:checked ~ .slider #slide-1,
+#dot-2:checked ~ .slider #slide-2,
+#dot-3:checked ~ .slider #slide-3,
+#dot-4:checked ~ .slider #slide-4 {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+  -webkit-transition: all 1s cubic-bezier(0.4, 1.3, 0.65, 1);
+  transition: all 1s cubic-bezier(0.4, 1.3, 0.65, 1);
+  opacity: 1;
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #242b31;
+  min-width: 1vh;
+}
+
+.footer-wrapper {
+  width: 50%;
+  padding: 2vh 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media only screen and (max-width: 63rem) {
+  .slider-box {
+    max-width: 68vw;
+  }
+  .slide-wrap {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (64vw)[4];
+        grid-template-columns: repeat(4, 64vw);
+  }
+}
+
+@media only screen and (max-width: 50rem) {
+  .slider-box {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "slider slider"  "control control" "title title";
+    max-width: 100vw;
+    margin-bottom: 0;
+  }
+  .slider {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: slider;
+  }
+  .slider__image {
+    width: 96vw;
+  }
+  .title {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: title;
+    text-align: left;
+    padding-bottom: 0;
+  }
+  .control {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: control;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 32rem) {
+  h1 {
+    font-size: 2rem;
+  }
+  .slider__image {
+    height: 66vh;
+  }
+}
