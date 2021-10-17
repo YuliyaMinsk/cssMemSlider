@@ -23,7 +23,7 @@ h1 {
   font-size: 2.92rem;
   font-weight: 200;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 0.6rem;
 }
 
 ul[class],
@@ -155,9 +155,9 @@ input {
 
 .dots {
   display: inline-block;
-  margin: 10px 5px;
-  width: 18px;
-  height: 18px;
+  margin: 0.6rem 0.3rem;
+  width: 1.1rem;
+  height: 1.1rem;
   border-radius: 50%;
   background-color: #1948ad;
   cursor: pointer;
@@ -174,14 +174,14 @@ input {
 #dot-2:checked ~ .control #label2:hover #label2__area,
 #dot-3:checked ~ .control #label3:hover #label3__area,
 #dot-4:checked ~ .control #label4:hover #label4__area {
-  border: 2px solid #ffffff;
+  border: 0.2rem solid #ffffff;
 }
 
 #dot-1:checked ~ .control #label1 #label1__area,
 #dot-2:checked ~ .control #label2 #label2__area,
 #dot-3:checked ~ .control #label3 #label3__area,
 #dot-4:checked ~ .control #label4 #label4__area {
-  border: 2px solid #1948ad;
+  border: 0.2rem solid #1948ad;
   background-color: transparent;
 }
 
@@ -237,7 +237,7 @@ input {
           justify-content: space-between;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 63rem) {
   .slider-box {
     max-width: 68vw;
   }
@@ -249,7 +249,7 @@ input {
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 50rem) {
   .slider-box {
     display: -ms-grid;
     display: grid;
@@ -272,7 +272,7 @@ input {
     -ms-grid-column-span: 2;
     grid-area: title;
     text-align: left;
-    padding-bottom: 0px;
+    padding-bottom: 0;
   }
   .control {
     -ms-grid-row: 2;
@@ -283,7 +283,7 @@ input {
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 32rem) {
   h1 {
     font-size: 2rem;
   }
